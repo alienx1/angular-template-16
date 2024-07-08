@@ -1,0 +1,79 @@
+<div nz-row nzJustify="space-around" nzAlign="middle" style="margin-top: 10%">
+  <nz-card [nzTitle]="Title" nz-col nzSpan="18" style="max-width: 400px">
+    <form
+      nz-form
+      [formGroup]="LoginForm"
+      class="login-form"
+      (ngSubmit)="submitForm()"
+    >
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group>
+            <input
+              type="text"
+              nz-input
+              formControlName="userName"
+              placeholder="Username"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your name!">
+          <nz-input-group>
+            <input
+              type="text"
+              nz-input
+              formControlName="name"
+              placeholder="Name"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group>
+            <input
+              type="password"
+              nz-input
+              formControlName="password"
+              placeholder="Password"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your confirmPassword!">
+          <nz-input-group>
+            <input
+              type="password"
+              nz-input
+              formControlName="confirmPassword"
+              placeholder="Confirm Password"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <button
+        nz-button
+        class="login-form-button login-form-margin"
+        [nzType]="'primary'"
+      >
+        ลงทะเบียน
+      </button>
+    </form>
+  </nz-card>
+</div>
+
+<ng-template #Title>
+  <div nz-row>
+    <div nz-col nzSpan="3">
+      <button nz-button nzShape="circle"><span nz-icon nzType="left" (click)="toLoginPage()"></span></button>
+    </div>
+    <div nz-col nzSpan="18" style="width: 100%; text-align: center; font-weight: 900">Register</div>
+    <div nz-col nzSpan="3"></div>
+  </div>
+</ng-template>

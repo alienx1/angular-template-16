@@ -1,0 +1,52 @@
+<div nz-row nzJustify="space-around" nzAlign="middle" style="margin-top: 10%">
+  <nz-card [nzTitle]="Title" nz-col nzSpan="18" style="max-width: 400px">
+    <form
+      nz-form
+      [formGroup]="LoginForm"
+      class="login-form"
+      (ngSubmit)="submitForm()"
+    >
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group>
+            <input
+              type="text"
+              nz-input
+              formControlName="userName"
+              placeholder="Username"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your Password!">
+          <nz-input-group>
+            <input
+              type="password"
+              nz-input
+              formControlName="password"
+              placeholder="Password"
+            />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <div nz-row class="login-form-margin">
+        <div nz-col nzSpan="12"></div>
+        <div nz-col nzSpan="12">
+          <a class="login-form-register" (click)="toRegisterPage()">register now</a>
+        </div>
+      </div>
+      <button
+        nz-button
+        class="login-form-button login-form-margin"
+        [nzType]="'primary'"
+      >
+        ลงชื่อเข้าใช้
+      </button>
+    </form>
+  </nz-card>
+</div>
+
+<ng-template #Title>
+  <div style="width: 100%; text-align: center; font-weight: 900">Login</div>
+</ng-template>
